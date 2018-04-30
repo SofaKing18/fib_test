@@ -15,4 +15,8 @@ RSpec.describe Fib do
   it "Fib 20th number equal 6765" do
     expect(Fib.number(20)).to eq(6765)
   end
+
+  it "CLI Fib 32th number equal 2178309" do 
+    expect(%x{Fib 32}).to eq("2178309\n")
+  end
 end

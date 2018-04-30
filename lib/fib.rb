@@ -2,12 +2,9 @@ require "fib/version"
 
 module Fib
   extend self
-
+  
   def number(n)
-    if n > 2 then
-      number(n-1)+number(n-2)
-    else
-      1
-    end
-  end
+    (0..n-2).reduce([0,1]) do |acc, n|
+        acc = [acc.last, acc.sum]
+    end.last  end
 end
